@@ -1,0 +1,17 @@
+<div class="container">
+	<form class="row mt-3 gx-3 gy-2 align-item-center justify-content-center">
+		<div class="col-sm-6">
+			<!--! [(ngModel)] is used to bind a property from our class to form. -->
+			<!--! when we type some thing in the input field. It will reflect to the property. -->
+			<input [(ngModel)]="newToDoTask" type="text" name="add-new-todo" class="form-control" placeholder="Add a new TO-DO task" >
+		</div>
+		<div class="col-auto">
+			<button type="submit" class="btn btn-primary" (click)="$event.preventDefault(); addNewToDoTask()">
+				Save
+			</button>
+		</div>	
+	</form>
+</div>
+
+
+

@@ -1,0 +1,5 @@
+<select name="filter" id="filer" class="form-control" [(ngModel)]="taskFilter" (ngModelChange)="changeFilter($event)">
+    <option value="0">All Tasks</option>
+    <option value="1">Completed</option>
+    <option value="2">Pending</option>
+</select>
