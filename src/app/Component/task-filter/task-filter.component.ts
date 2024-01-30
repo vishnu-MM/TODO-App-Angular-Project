@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { WishItem } from 'src/Shared/Models/WishItem';
 
 const   filters : any[] = [ ( item : WishItem ) => item, ( item : WishItem ) => item.isComplete, ( item : WishItem ) => !item.isComplete ];
@@ -6,12 +6,14 @@ const   filters : any[] = [ ( item : WishItem ) => item, ( item : WishItem ) => 
 @Component({ selector: 'task-filter', templateUrl: './task-filter.component.html', styleUrls: ['./task-filter.component.css']   })
 export class TaskFilterComponent implements OnInit {
   taskFilter : string = '2';
-  @Output() filter = new EventEmitter<any>();
+  @Input() filter : any;
+  @Output() filterChange = new EventEmitter<any>();
   
   ngOnInit(): void {
-    this.changeFilter(this.taskFilter);
-  }
-  changeFilter(event : any) {
-    this.filter.emit(filters[event]);
+    this.filterChange.emit(filters[2]);
+  }  
+  updateFilter(event : any) {
+    this.filter = filters[event];
+    this.filterChange.emit(this.filter);
   }
 }
