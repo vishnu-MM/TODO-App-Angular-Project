@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { ListTODOsComponent } from './Component/list-todos/list-todos.component';
 import { AddNewTaskComponent } from './Component/add-new-task/add-new-task.component';
 import { TaskFilterComponent } from './Component/task-filter/task-filter.component';
+import { ListItemComponent } from './Component/list-item/list-item.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { TaskFilterComponent } from './Component/task-filter/task-filter.compone
     HeaderComponent,
     ListTODOsComponent,
     AddNewTaskComponent,
-    TaskFilterComponent
+    TaskFilterComponent,
+    ListItemComponent
     ],
   imports: [
     BrowserModule,

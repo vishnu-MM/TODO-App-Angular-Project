@@ -6,7 +6,8 @@ const   filters : any[] = [ ( item : WishItem ) => item, ( item : WishItem ) => 
 @Component({ selector: 'task-filter', templateUrl: './task-filter.component.html', styleUrls: ['./task-filter.component.css']   })
 export class TaskFilterComponent implements OnInit {
   taskFilter : string = '2';
-  @Input() filter : any;
+  //* This filter propety is bound to the filter property in the app component.
+  @Input() filter : any; //* for Two-way binging we need both Input & Output. The naming convetion is to name Output is intputname + Change.
   @Output() filterChange = new EventEmitter<any>();
   
   ngOnInit(): void {

@@ -3,25 +3,14 @@
 <!--! *ngIf is a Direactory. it act like a attribute and we can provide JS expressions as its value.  -->
 <!--TODO: <div *ngIf="tasks.length !== 0" > <div *ngIf="tasks.length !== 0; then ng-template name" > -->
 <!--TODO:	 <div *ngIf="tasks.length !== 0; then ng-template name; else ng-template name" > <div *ngIf="tasks.length !== 0; else ng-template name" > -->
-	<div *ngIf="tasks.length !== 0;"  >
+<div *ngIf="tasks.length !== 0;"  >
     <ul class="wish-list">
         <!--! *ngFor is a Direactory. it act like a attribute and we can provide JS expressions as its value. -->
-        <li *ngFor="let item of tasks; index as idx">
-            <div class="form-check">
-                <label for="checkbox"> 
-                    <!--! The [checked] is a JS property of checkbox -->
-                    <input 
-                        (click)="toggleItemStatus($event, item)"
-                        [checked]="item.isComplete" 
-                        [attr.date-index]="idx" 
-                        type="checkbox" 
-                        class="checkbox" 
-                        id="checkbox"
-                    > 
-                </label>
-                {{ item.wishText }}
-            </div>
-        </li>	
+        <list-item
+            *ngFor="let wish of tasks"
+            [wishText]="wish.wishText"
+            [(wishStatus)]="wish.isComplete" 
+        ></list-item>   
     </ul>
 </div>
 <!--! ng-template is refering from the else part of the if condition that we writter above.  -->

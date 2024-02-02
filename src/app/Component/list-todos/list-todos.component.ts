@@ -7,9 +7,6 @@ import { WishItem } from 'src/Shared/Models/WishItem';
   styleUrls: ['./list-todos.component.css']
 })
 export class ListTODOsComponent {
-  @Input() tasks : WishItem[] = []; //* @Input() is a decorator says data came from where we use this template.
-
-  toggleItemStatus( event : any, item : WishItem ) {   
-    item.isComplete = !item.isComplete;
-  }
+  //* @Input() is a decorator says data came from where we use this template.
+  @Input() tasks : WishItem[] = []; 
 }

@@ -1,0 +1,19 @@
+<li>
+    <!--! To add css class to a element is done though different way.  -->
+    <!--! We can done that using ngClass Direactory and JS expression as value. -->
+    <!--? <div class="form-check" [ngClass]="wishStatus ? 'completed-task' : ''"> -->
+    <!--! Or ngClass Direactory and a getter method call where the logic is written in the class. -->
+    <div class="form-check" [ngClass]=" getCssClassForCompletedTask">
+        <label for="checkbox"> 
+            <!--! The [checked] is a JS property of checkbox -->
+            <input
+                type="checkbox" 
+                class="checkbox" 
+                id="checkbox"
+                (click)="toggleItemStatus()"
+                [checked]="wishStatus" 
+            >
+        </label>
+        {{ wishText }}
+    </div>
+</li>
