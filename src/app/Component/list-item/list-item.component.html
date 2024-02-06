@@ -4,6 +4,11 @@
     <!--? <div class="form-check" [ngClass]="wishStatus ? 'completed-task' : ''"> -->
     <!--! Or ngClass Direactory and a getter method call where the logic is written in the class. -->
     <div class="form-check" [ngClass]=" getCssClassForCompletedTask">
+        <button 
+            type="button" 
+            class="btn btn-close btn-close-white me-2"
+            (click)="removeTask()"
+        ></button>
         <label for="checkbox"> 
             <!--! The [checked] is a JS property of checkbox -->
             <input
@@ -11,9 +16,9 @@
                 class="checkbox" 
                 id="checkbox"
                 (click)="toggleItemStatus()"
-                [checked]="wishStatus" 
+                [checked]="task.isComplete" 
             >
         </label>
-        {{ wishText }}
+        {{ task.wishText }}
     </div>
 </li>

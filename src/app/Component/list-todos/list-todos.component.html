@@ -6,10 +6,14 @@
 <div *ngIf="tasks.length !== 0;"  >
     <ul class="wish-list">
         <!--! *ngFor is a Direactory. it act like a attribute and we can provide JS expressions as its value. -->
-        <list-item
+        <!-- <list-item 
             *ngFor="let wish of tasks"
             [wishText]="wish.wishText"
             [(wishStatus)]="wish.isComplete" 
+        ></list-item>    -->
+        <list-item
+            *ngFor="let task of tasks"
+            [task]="task" 
         ></list-item>   
     </ul>
 </div>
